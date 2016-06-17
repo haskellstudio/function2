@@ -78,3 +78,6 @@ install:
 script:
   - make -j2
   - valgrind --error-exitcode=1 --leak-check=full --show-reachable=yes ./test/function2_tests
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
